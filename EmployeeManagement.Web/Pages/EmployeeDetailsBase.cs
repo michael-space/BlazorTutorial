@@ -1,7 +1,6 @@
 ﻿using EmployeeManagement.Models;
 using EmployeeManagement.Web.Services;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 using System.Threading.Tasks;
 
 namespace EmployeeManagement.Web.Pages

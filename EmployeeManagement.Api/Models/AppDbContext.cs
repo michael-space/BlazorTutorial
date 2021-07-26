@@ -1,6 +1,5 @@
 ﻿using EmployeeManagement.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace EmployeeManagement.Api.Models
 {
