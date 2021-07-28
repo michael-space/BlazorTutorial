@@ -14,8 +14,12 @@
         <div class="card-footer text-center">
             <a href="@($"employeedetails/{Employee.EmployeeId}")" class="btn btn-primary m-1">View</a>
             <a href="@($"editemployee/{Employee.EmployeeId}")" class="btn btn-primary m-1">Edit</a>
-            <a href="#" class="btn btn-danger m-1">Delete</a>
+            <button @onclick="Delete_Click" class="btn btn-danger m-1">Delete</button>
         </div>
     }
 
 </div>
+<ConfirmModal @ref="DeleteConfirmationModal"
+              ConfirmationChanged="ConfirmDelete_Click"
+              ConfirmationTitle="Delete Confirmation"
+              ConfirmationMessage=@($"Are you sure you want to delete \"{Employee.FirstName}\"")></ConfirmModal>

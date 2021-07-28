@@ -32,9 +32,14 @@ else
                 <div class="card-footer text-center @CssClass">
                     <a href="/" class="btn btn-primary">Back</a>
                     <a href="@($"editemployee/{Employee.EmployeeId}")" class="btn btn-primary">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
+                    <button class="btn btn-danger" @onclick="(() => Delete_Click())">Delete</button>
                 </div>
             </div>
         </div>
     </div>
 }
+
+<ConfirmModal @ref="DeleteConfirmationModal"
+              ConfirmationChanged="ConfirmDelete_Click"
+              ConfirmationTitle="Delete Confirmation"
+              ConfirmationMessage=@($"Are you sure you want to delete \"{Employee.FirstName}\"")></ConfirmModal>

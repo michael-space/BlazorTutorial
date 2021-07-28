@@ -69,7 +69,7 @@ namespace EmployeeManagement.Api.Controller
             }
             catch (System.Exception)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, 
+                return StatusCode(StatusCodes.Status500InternalServerError,
                     "Error retrieving data");
             }
         }
@@ -80,7 +80,7 @@ namespace EmployeeManagement.Api.Controller
             if (employee == null)
             {
                 return BadRequest();
-            }            
+            }
 
             try
             {
@@ -105,18 +105,18 @@ namespace EmployeeManagement.Api.Controller
         }
 
         [HttpPut]
-        public async Task<ActionResult<Employee>> UpdateEmployee(Employee employee)
-        {          
+        public async Task<ActionResult<Employee>> UpdateEmployee(Employee updatedEmployee)
+        {
             try
             {
-                var employeeToUpdate = await employeeRepository.GetEmployee(employee.EmployeeId);
+                var employeeToUpdate = await employeeRepository.GetEmployee(updatedEmployee.EmployeeId);
 
                 if (employeeToUpdate == null)
                 {
-                    return NotFound($"Employee with Id = {employee.EmployeeId} not found.");
+                    return NotFound($"Employee with Id = {updatedEmployee.EmployeeId} not found.");
                 }
 
-                return await employeeRepository.UpdateEmployee(employee);
+                return await employeeRepository.UpdateEmployee(updatedEmployee);
             }
             catch (System.Exception)
             {
@@ -136,6 +136,6 @@ namespace EmployeeManagement.Api.Controller
             }
 
             return await employeeRepository.DeleteEmployee(id);
-        }        
+        }
     }
 }

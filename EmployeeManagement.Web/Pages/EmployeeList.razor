@@ -16,7 +16,7 @@ else
         @foreach (var employee in Employees)
         {
             <DisplayEmployee Employee="employee" ShowFooter="ShowFooter"
-                             OnEmployeeChecked="CountEmployees"/>
+                             OnEmployeeChecked="CountEmployees" OnEmployeeDeleted="DeleteEmployee"/>
         }
 
     </div>

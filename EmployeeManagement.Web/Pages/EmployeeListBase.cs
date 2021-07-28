@@ -35,7 +35,17 @@ namespace EmployeeManagement.Web.Pages
             }
         }
 
+        public async Task DeleteEmployee()
+        {
+            await GetEmployees();
+        }
+
         protected override async Task OnInitializedAsync()
+        {
+            await GetEmployees();
+        }
+
+        public async Task GetEmployees()
         {
             Employees = (await EmployeeService.GetEmployees()).ToList();
         }
